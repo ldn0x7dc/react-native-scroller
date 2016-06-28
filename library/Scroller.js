@@ -84,6 +84,8 @@ export default class Scroller {
    * @param flywheel specify whether or not to support progressive "flywheel" behavior in flinging.
    */
   constructor(flywheel, onScrollCallback) {
+    this.mCurrX = 0;
+    this.mCurrY = 0;
     this.mFinished = true;
     this.mInterpolator = ViscousFluidInterpolator;
     //this.mPpi = PixelRatio.get() * 160;
@@ -171,8 +173,8 @@ export default class Scroller {
 
           this.mCurrX = this.mStartX + Math.round(distanceCoef * (this.mFinalX - this.mStartX));
           // Pin to mMinX <= mCurrX <= mMaxX
-          this.mCurrX = Math.min(this.mCurrX, this.mMaxX);
-          this.mCurrX = Math.max(this.mCurrX, this.mMinX);
+          //this.mCurrX = Math.min(this.mCurrX, this.mMaxX);
+          //this.mCurrX = Math.max(this.mCurrX, this.mMinX);
 
           this.mCurrY = this.mStartY + Math.round(distanceCoef * (this.mFinalY - this.mStartY));
           // Pin to mMinY <= mCurrY <= mMaxY
@@ -350,6 +352,6 @@ export default class Scroller {
   }
 
   debugInfo() {
-    return 'cur=' + this.mCurrX + ' ' + this.mCurrY;
+    return 'cur=' + this.mCurrX + ' ' + this.mCurrY + ', final=' + this.mFinalX + ' ' + this.mFinalY;
   }
 }
