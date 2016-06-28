@@ -2,7 +2,7 @@
   "name": "react-native-scroller",
   "version": "0.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "library/Scroller.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
