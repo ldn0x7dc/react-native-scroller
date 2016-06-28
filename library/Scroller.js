@@ -78,42 +78,7 @@ function signum(number) {
   return sig;
 }
 
-class Scroller {
-  //var mInterpolator;
-  //var mMode;
-  //
-  //var mStartX;
-  //var mStartY;
-  //var mFinalX;
-  //var mFinalY;
-  //
-  //var mMinX;
-  //var mMaxX;
-  //var mMinY;
-  //var mMaxY;
-  //
-  //var mCurrX;
-  //var mCurrY;
-  //var mStartTime;
-  //var mDuration;
-  //var mDurationReciprocal;
-  //var mDeltaX;
-  //var mDeltaY;
-  //var mFinished;
-  //var mFlywheel;
-  //
-  //var mVelocity;
-  //var mCurrVelocity;
-  //var mDistance;
-  //
-  //var mFlingFriction = SCROLL_FRICTION;
-  //
-  //var mDeceleration;
-  //var mPpi; //TODO remove it
-  //
-  //// A context-specific coefficient adjusted to physical values.
-  //var mPhysicalCoeff;
-
+export default class Scroller {
   /**
    *
    * @param flywheel specify whether or not to support progressive "flywheel" behavior in flinging.
@@ -386,11 +351,5 @@ class Scroller {
 
   debugInfo() {
     return 'cur=' + this.mCurrX + ' ' + this.mCurrY;
-  }
-}
-
-module.exports = {
-  create: function (onScrollCallback) {
-    return new Scroller(true, onScrollCallback);
   }
 }
