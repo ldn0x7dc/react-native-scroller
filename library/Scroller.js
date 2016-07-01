@@ -201,6 +201,10 @@ export default class Scroller {
     this.mLastY = this.mCurrY;
 
     this.onScrollCallback && this.onScrollCallback(dx, dy, this);
+
+    if(dx === 0 && dy === 0 && this.mFinished) {
+      return false;
+    }
     return true;
   }
 
